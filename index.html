@@ -1,904 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manu Yadav | Data Analyst & Business Intelligence Professional</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #06b6d4;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --dark: #1e293b;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: var(--secondary);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            color: var(--secondary);
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--secondary);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--gray);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: var(--primary);
-            color: white;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--secondary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav li {
-            margin-left: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        nav a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            left: 0;
-            bottom: -5px;
-            transition: width 0.3s;
-        }
-
-        nav a:hover:after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--secondary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-top: 140px;
-            display: flex;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        }
-
-        .hero-content {
-            flex: 1;
-            padding-right: 40px;
-        }
-
-        .hero h1 {
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-placeholder {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 8rem;
-            box-shadow: var(--shadow);
-        }
-
-        /* Skills Section */
-        .skills-section {
-            background: white;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .skill-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-category {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skill-tag {
-            padding: 8px 16px;
-            background: #e0f2fe;
-            color: var(--primary);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            background: #f8fafc;
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-img {
-            height: 200px;
-            background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
-
-        .project-tool {
-            padding: 5px 12px;
-            background: #f1f5f9;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: white;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: #e0f2fe;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: #f1f5f9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--secondary);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .copyright {
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 120px;
-            }
-
-            .hero-content {
-                padding-right: 0;
-                margin-bottom: 50px;
-            }
-
-            .hero-btns {
-                justify-content: center;
-            }
-
-            h1 {
-                font-size: 2.8rem;
-            }
-
-            h2 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .mobile-menu {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                display: none;
-                flex-direction: column;
-                z-index: 999;
-            }
-
-            .mobile-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu li {
-                margin: 10px 0;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                text-align: center;
-            }
-
-            .image-placeholder {
-                width: 250px;
-                height: 250px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manu | Data Analyst & Databricks Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body{margin:0;font-family:Poppins,Arial;background:#f8fafc;color:#1e293b}
+section{padding:80px 20px}
+h1,h2,h3{text-align:center}
+.btn{padding:12px 24px;background:#2563eb;color:white;border-radius:6px;text-decoration:none;margin:10px;display:inline-block}
+.btn-outline{border:2px solid #2563eb;color:#2563eb;background:none}
+.hero{background:#e0f2fe;text-align:center;padding:140px 20px}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.card{background:white;padding:25px;border-radius:10px;box-shadow:0 10px 15px rgba(0,0,0,.1)}
+.skills span{display:inline-block;padding:8px 15px;background:#e0f2fe;margin:5px;border-radius:50px}
+footer{background:#0f172a;color:white;text-align:center;padding:40px}
+</style>
 </head>
+
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">Manu<span>Yadav</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Manu Yadav</h1>
-                <h3>Data Analyst & Business Intelligence Professional</h3>
-                <p>I transform raw data into actionable insights using advanced analytics, statistical models, and data visualization techniques to drive business decisions and strategy.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn">View My Projects</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+<h1>Manu</h1>
+<h3>Data Analyst | Databricks | Spark | SQL | BI & Analytics</h3>
+<p>I love building ETL pipelines, cleaning and transforming raw data, and using statistics & business metrics to generate powerful insights.</p>
+<a href="#projects" class="btn">View My Databricks Project</a>
+<a href="assets/Manu_Resume.pdf" class="btn btn-outline" download>Download Resume</a>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 2rem;">
-                    I am a passionate Data Analyst with expertise in Python, SQL, and data visualization tools. I specialize in extracting meaningful insights from complex datasets to help organizations make data-driven decisions.
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-                    <div style="text-align: center; padding: 20px;">
-                        <i class="fas fa-database" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Data Processing</h3>
-                        <p>Cleaning, transforming, and organizing raw data for analysis using Python and SQL.</p>
-                    </div>
-                    <div style="text-align: center; padding: 20px;">
-                        <i class="fas fa-chart-bar" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Data Visualization</h3>
-                        <p>Creating interactive dashboards and reports to communicate findings effectively.</p>
-                    </div>
-                    <div style="text-align: center; padding: 20px;">
-                        <i class="fas fa-lightbulb" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h3>Insight Generation</h3>
-                        <p>Applying statistical analysis and machine learning to uncover patterns and trends.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ABOUT -->
+<section>
+<h2>About Me</h2>
+<p style="max-width:800px;margin:auto;text-align:center">
+I am a passionate Data Analyst skilled in Python, SQL, and Apache Spark.  
+I specialize in building scalable ETL pipelines, cleaning big datasets, and transforming raw data into business-ready insights.
+</p>
+</section>
 
-    <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Data Analysis & Visualization</h3>
-                    <p>Proficient in Python libraries for data manipulation, analysis, and visualization.</p>
-                    <div class="skill-category">
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Plotly</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Databases & Querying</h3>
-                    <p>Expertise in SQL for data extraction, transformation, and database management.</p>
-                    <div class="skill-category">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">BigQuery</span>
-                        <span class="skill-tag">ETL Processes</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>BI & Dashboard Tools</h3>
-                    <p>Creating interactive dashboards and business intelligence reports.</p>
-                    <div class="skill-category">
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Google Data Studio</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Machine Learning & Statistics</h3>
-                    <p>Applying statistical methods and ML algorithms for predictive analytics.</p>
-                    <div class="skill-category">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Statistical Analysis</span>
-                        <span class="skill-tag">A/B Testing</span>
-                        <span class="skill-tag">Regression Models</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- SKILLS -->
+<section>
+<h2>Technical Skills</h2>
+<div class="skills" style="text-align:center">
 
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Retail Sales Analysis</h3>
-                        <p>Comprehensive analysis of retail sales data to identify trends, top-performing products, and revenue insights. Developed interactive dashboards for sales performance tracking.</p>
-                        <div class="project-tools">
-                            <span class="project-tool">Python</span>
-                            <span class="project-tool">Pandas</span>
-                            <span class="project-tool">SQL</span>
-                            <span class="project-tool">Tableau</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/YOUR_USERNAME/retail-sales-analysis" class="btn" target="_blank">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Healthcare Data Analysis</h3>
-                        <p>Analyzed patient data to identify patterns in treatment outcomes and hospital readmission rates. Built predictive models to assist in patient risk assessment.</p>
-                        <div class="project-tools">
-                            <span class="project-tool">Python</span>
-                            <span class="project-tool">Scikit-learn</span>
-                            <span class="project-tool">Seaborn</span>
-                            <span class="project-tool">Power BI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/YOUR_USERNAME/healthcare-analysis" class="btn" target="_blank">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Financial Market Trends</h3>
-                        <p>Time-series analysis of stock market data to identify patterns and build forecasting models. Created interactive visualizations for market trend analysis.</p>
-                        <div class="project-tools">
-                            <span class="project-tool">Python</span>
-                            <span class="project-tool">Time Series Analysis</span>
-                            <span class="project-tool">Plotly</span>
-                            <span class="project-tool">SQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/YOUR_USERNAME/financial-analysis" class="btn" target="_blank">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h3>Data Analysis & Visualization</h3>
+<span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>DuckDB</span><span>Dask</span>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always open to discussing data analytics, new opportunities, or potential collaborations.</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>your.email@example.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Based in India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://github.com/YOUR_USERNAME" class="social-icon" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/YOUR_USERNAME" class="social-icon" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://twitter.com/YOUR_USERNAME" class="social-icon" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://medium.com/@YOUR_USERNAME" class="social-icon" target="_blank">
-                            <i class="fab fa-medium-m"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3>Send Me a Message</h3>
-                    <form id="contactForm" style="margin-top: 20px;">
-                        <div style="margin-bottom: 20px;">
-                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: var(--radius); font-family: 'Poppins', sans-serif;" required>
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: var(--radius); font-family: 'Poppins', sans-serif;" required>
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: var(--radius); font-family: 'Poppins', sans-serif;" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<h3>Databases & Querying</h3>
+<span>SQL</span><span>MS SQL Server</span><span>MySQL</span><span>ETL Process</span>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <a href="#" class="logo" style="color: white;">Manu<span style="color: #93c5fd;">Yadav</span></a>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <p class="copyright">© <span id="currentYear"></span> Manu Yadav. All rights reserved.</p>
-        </div>
-    </footer>
+<h3>BI & Dashboard Tools</h3>
+<span>Power BI</span><span>Excel</span><span>Plotly</span>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking a link
-        const mobileLinks = document.querySelectorAll('.mobile-menu a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-        
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Simple form submission handler
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            contactForm.reset();
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if(window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    </script>
+<h3>Big Data</h3>
+<span>Databricks</span><span>Apache Spark</span><span>Delta Lake</span>
+
+</div>
+</section>
+
+<!-- PROJECT -->
+<section id="projects">
+<h2>Featured Project</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>End-to-End E-Commerce Data Pipeline & Dashboard</h3>
+<p>
+Built a complete analytics platform using Databricks and Apache Spark.
+Implemented Bronze → Silver → Gold architecture to ingest, clean, and transform
+raw e-commerce data into business KPIs and an interactive Plotly dashboard.
+</p>
+<p><b>Tech:</b> Databricks, Spark, Delta Lake, SQL, Pandas, Plotly</p>
+<a class="btn" href="https://github.com/Manu123778/End-to-End-E-Commerce-Data-Pipeline-Dashboard/blob/main/end_to_end_dataproject%202026-01-09%2011_23_16.ipynb" target="_blank">
+View on GitHub
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section style="background:#f1f5f9">
+<h2>Databricks Project Screenshots</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1000px;margin:auto">
+<img src="assets/images/bronze_layer.png">
+<img src="assets/images/silver_layer.png">
+<img src="assets/images/gold_layer.png">
+<img src="assets/images/dashboard.png">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2>Contact</h2>
+<p style="text-align:center">Let’s connect for Data Analytics, Databricks, and BI roles.</p>
+<p style="text-align:center">📍 India</p>
+<p style="text-align:center">📧 your.email@example.com</p>
+</section>
+
+<footer>
+<p>© 2026 Manu | Data Analytics Portfolio</p>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
