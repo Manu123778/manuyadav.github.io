@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manu | Data Analyst & Data Engineer</title>
+    <title>Manu | Data Analyst & Databricks Engineer</title>
     <meta name="description" content="Professional portfolio of Manu, a Data Analyst & Databricks Engineer specializing in ETL pipelines, data transformation, and business insights.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -543,6 +543,28 @@
             font-size: 0.9rem;
         }
         
+        /* Resume Download Section */
+        .resume-download {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border-radius: var(--border-radius);
+        }
+        
+        .resume-download h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .resume-download p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -613,6 +635,16 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -631,7 +663,6 @@
             .contact-item {
                 flex-direction: column;
                 text-align: center;
-                width: 100%;
             }
             
             .footer-links {
@@ -668,11 +699,10 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Manu</h1>
-            <h3>Data Analyst | Databricks Engineer | BI Specialist</h3>
+            <h3>Data Analyst | Databricks Engineer</h3>
             <p>I transform raw data into actionable business intelligence through scalable ETL pipelines, advanced analytics, and interactive dashboards that drive strategic decision-making.</p>
             <div class="hero-btns">
-                <a href="#projects" class="btn">View My Projects</a>
-                <a href="assets/Manu_Resume.pdf" class="btn btn-outline" download>
+                <a href="Resume_Template_by_Krishna_Priyatham_Potluri.pdf" class="btn" download="Manu_Resume.pdf">
                     <i class="fas fa-download"></i> Download Resume
                 </a>
             </div>
@@ -684,8 +714,8 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>I am a passionate Data Analyst and Databricks Engineer with expertise in Python, SQL, and Apache Spark. I specialize in building end-to-end data pipelines, transforming complex datasets into structured formats, and creating insightful visualizations that uncover business opportunities.</p>
-                <p>With a strong foundation in statistics and business metrics, I bridge the gap between raw data and strategic insights, enabling organizations to make data-driven decisions. My experience spans across e-commerce, finance, and healthcare domains, where I've implemented scalable solutions that handle millions of records efficiently.</p>
+                <p>I am a passionate Data Analyst and Databricks Engineer with hands-on experience in Databricks, Apache Spark, Python, SQL, and statistics. I specialize in building end-to-end data pipelines, transforming complex datasets into structured formats, and creating insightful visualizations that uncover business opportunities.</p>
+                <p>With a strong foundation in statistics and business metrics, I bridge the gap between raw data and strategic insights, enabling organizations to make data-driven decisions. I've built ETL pipelines and dashboards to convert raw e-commerce data into revenue, retention, and customer insights using the Medallion Architecture.</p>
             </div>
         </div>
     </section>
@@ -738,14 +768,18 @@
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-calculator"></i> Statistics & Mathematics</h3>
+                    <h3><i class="fas fa-calculator"></i> Statistics & Business Metrics</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Descriptive Statistics</span>
                         <span class="skill-tag">Inferential Statistics</span>
                         <span class="skill-tag">Probability</span>
                         <span class="skill-tag">Hypothesis Testing</span>
-                        <span class="skill-tag">Regression Analysis</span>
-                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">AOV</span>
+                        <span class="skill-tag">CLV</span>
+                        <span class="skill-tag">Retention Analysis</span>
+                        <span class="skill-tag">Trend Analysis</span>
+                        <span class="skill-tag">Linear Regression</span>
+                        <span class="skill-tag">Logistic Regression</span>
                     </div>
                 </div>
                 
@@ -766,7 +800,7 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-img">
@@ -774,14 +808,15 @@
                     </div>
                     <div class="project-content">
                         <h3>End-to-End E-Commerce Data Pipeline & Dashboard</h3>
-                        <p>Designed and implemented a complete analytics platform using Databricks and Apache Spark. Built Bronze → Silver → Gold architecture to ingest, clean, and transform raw e-commerce data into business KPIs with an interactive Plotly dashboard.</p>
+                        <p>Built Bronze → Silver → Gold pipelines in Databricks to process raw e-commerce data into analytics-ready tables. Cleaned and standardized data using PySpark and Delta Lake with data quality checks. Created Gold-layer KPIs: Revenue, AOV, Purchase Frequency, CLV, and Retention Rate. Built an interactive Plotly dashboard for sales trends, product performance, and customer retention.</p>
                         <div class="project-tech">
                             <span>Databricks</span>
-                            <span>Spark</span>
+                            <span>Apache Spark</span>
                             <span>Delta Lake</span>
                             <span>SQL</span>
-                            <span>Plotly</span>
                             <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Plotly</span>
                         </div>
                         <a class="btn" href="https://github.com/Manu123778/End-to-End-E-Commerce-Data-Pipeline-Dashboard/blob/main/end_to_end_dataproject%202026-01-09%2011_23_16.ipynb" target="_blank">
                             <i class="fab fa-github"></i> View on GitHub
@@ -828,6 +863,17 @@
         </div>
     </section>
 
+    <!-- Resume Download Section -->
+    <section class="resume-download">
+        <div class="container">
+            <h3>Download My Resume</h3>
+            <p>Get a detailed overview of my skills, experience, and projects in a professionally formatted resume.</p>
+            <a href="Resume_Template_by_Krishna_Priyatham_Potluri.pdf" class="btn" download="Manu_Resume.pdf">
+                <i class="fas fa-download"></i> Download Resume (PDF)
+            </a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -850,17 +896,17 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>your.email@example.com</p>
+                            <p>justmanu650@gmail.com</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-globe"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+91 98765 43210</p>
+                            <h4>Portfolio</h4>
+                            <p>manu-portfolio.github.io</p>
                         </div>
                     </div>
                 </div>
@@ -870,17 +916,14 @@
                 </p>
                 
                 <div class="social-links">
-                    <a href="#" class="social-link">
+                    <a href="https://www.linkedin.com/in/r-manu-5b2221384/" class="social-link" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-link">
+                    <a href="https://github.com/Manu123778" class="social-link" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-medium"></i>
+                    <a href="https://manu-portfolio.github.io" class="social-link" target="_blank">
+                        <i class="fas fa-globe"></i>
                     </a>
                 </div>
             </div>
@@ -899,7 +942,7 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="copyright">
-                © 2026 Manu. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for Data Professionals
+                © 2024 Manu. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for Data Professionals
             </div>
         </div>
     </footer>
